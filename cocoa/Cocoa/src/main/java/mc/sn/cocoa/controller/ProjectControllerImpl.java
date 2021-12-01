@@ -72,7 +72,7 @@ public class ProjectControllerImpl implements ProjectController {
 
 		// projectWriteForm에 존재하지 않는 id 직접 입력
 		String id = memberVO.getId();
-		projectMap.put("project", id);
+		projectMap.put("leader", id);
 		// projectWriteForm에 불러온 파일(이미지) 직접 입력
 		String pImg = this.upload(multipartRequest);
 		projectMap.put("pImg", pImg);
