@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.coach">
+	<resultMap id="coachResult" type="coachVO">
+		<result property="coach" column="coach" />
+        <result property="lang" column="lang" />
+        <result property="cImg" column="cImg" />
+        <result property="cTitle" column="cTitle" />
+        <result property="basicPrice" column="basicPrice" />
+        <result property="cContents" column="cContents" />
+	</resultMap> 
+    
+    <!-- 새 코치 글 추가 기능 -->
+    <insert id="insertNewCoach"  parameterType="java.util.Map">
+		<![CDATA[
+		 insert into coachingTBL (coachNO, coach, lang, cImg, cTitle, basicPrice, cContents)
+		 values(#{coachNO}, #{coach}, #{lang}, #{cImg}, #{cTitle}, #{basicPrice}, #{cContents})
+		]]>      
+	</insert>
+	
+	<select id="selectNewCoachNO" resultType="int"  >
+		<![CDATA[
+			SELECT  ifnull(max(coachNO), 0) + 1 from coachingTBL		
+		]]>
+	</select>
+   
+</mapper>
