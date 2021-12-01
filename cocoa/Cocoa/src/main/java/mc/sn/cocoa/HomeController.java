@@ -12,4 +12,6 @@ public class HomeController {
 
 		return "home";
 	}
+	
+	// 테스트용 주석
 }
