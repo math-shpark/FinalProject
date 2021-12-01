@@ -100,4 +100,6 @@ public class MemberControllerImpl implements MemberController {
 		System.out.println(result);
 		return result;
 	}
+	
+	//멤버컨트롤러 - 정준
 }
