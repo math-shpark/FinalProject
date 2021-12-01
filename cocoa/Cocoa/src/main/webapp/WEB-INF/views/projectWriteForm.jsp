@@ -6,8 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
 <link href="resources/css/styles.css" rel="stylesheet" />
 <script type="text/javascript" src="resources/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
@@ -21,11 +20,7 @@
 			reader.readAsDataURL(input.files[0]);
 		}
 	}
-	function backToList(obj) {
-		obj.action = "${contextPath}/cocoa";
-		obj.submit();
-	}
-
+	
 	var cnt = 1;
 	function fn_addFile() {
 		$("#d_file")
@@ -37,6 +32,7 @@
 <title>CoCoa</title>
 </head>
 <body style="background-color: #FFEBCD">
+
 	<!-- 상단바 -->
 	<nav class="navbar navbar-expand-lg" style="background-color: #663333;">
 
@@ -51,24 +47,12 @@
 				</ul>
 
 				<!-- 우측 상단 변경 -->
-				<c:choose>
-					<c:when test="${isLogOn == true && member != null}">
-						<form action="/cocoa/logout" method="get" class="d-flex">
-							<input name="My Page" class="btn btn-outline-dark" type="button"
-								value="My Page" onClick="location.href='/cocoa/myPage'" /> <input
-								name="logout" class="btn btn-outline-dark" type="submit"
-								value="logout" />
-						</form>
-					</c:when>
-					<c:otherwise>
-						<form action="/cocoa/view_login" method="get" class="d-flex">
-							<input name="login" class="btn btn-outline-dark" type="submit"
-								value="log in" /> <input name="join"
-								class="btn btn-outline-dark" type="button" value="Sign in"
-								onClick="location.href='/cocoa/view_join'" />
-						</form>
-					</c:otherwise>
-				</c:choose>
+				<form action="/cocoa/logout" method="get" class="d-flex">
+					<input name="My Page" class="btn btn-outline-dark" type="button"
+						value="My Page" onClick="location.href='/cocoa/myPage'" /> <input
+						name="logout" class="btn btn-outline-dark" type="submit"
+						value="logout" />
+				</form>
 
 			</div>
 		</div>
@@ -109,9 +93,12 @@
 					<div class="card" style="width: 50rem;">
 						
 						<!-- pImg -->
-						<!-- 파일업로드 기능 필요 -->	
-						<img  id="preview" src="#"   width=700 height=400/>
-						<input type="file" name="cImg"  onchange="readURL(this);"/>
+						<div align="center">
+							<br><img id="preview" src="..." width=90%
+								height=300 /><br><br> <label class="btn btn-outline-dark"
+								for="pImg"> 대표 이미지 변경 </label><input type="file" id="pImg"
+								name="pImg" onchange="readURL(this);" style="display: none;" />
+						</div>
 						
 						<!-- pTitle / memberCount / pContents 입력 -->
 						<div class="project">
@@ -147,7 +134,7 @@
 						<div class="card-body" style="text-align: center">
 							<button type="submit" class="btn btn-outline-dark">작성</button>
 							&nbsp;
-							<button href="/cocoa/" class="btn btn-outline-dark">취소</button>
+							<a href="/cocoa/" class="btn btn-outline-dark">취소</a>
 						</div>
 					</div>
 					

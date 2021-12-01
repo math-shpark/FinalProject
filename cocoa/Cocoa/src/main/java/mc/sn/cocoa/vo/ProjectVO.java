@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component("projectVO")
 public class ProjectVO {
+	
 	private int projectNO;
 	private String leader;
 	private String pImg;

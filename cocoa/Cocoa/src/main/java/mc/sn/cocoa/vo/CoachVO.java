@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component("coachVO")
 public class CoachVO {
+
 	private int coachNO;
 	private String coach;
 	private String lang;

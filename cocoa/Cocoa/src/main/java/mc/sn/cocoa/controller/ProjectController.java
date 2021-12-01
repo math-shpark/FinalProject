@@ -8,7 +8,9 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 public interface ProjectController {
-	public ModelAndView view_join(HttpServletRequest request, HttpServletResponse response);
+
+	public ModelAndView view_projectWrite(HttpServletRequest request, HttpServletResponse response) throws Exception;
+
 	public ResponseEntity addNewProject(MultipartHttpServletRequest multipartRequest, HttpServletResponse response)
 			throws Exception;
 }
