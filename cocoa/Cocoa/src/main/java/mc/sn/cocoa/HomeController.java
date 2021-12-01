@@ -12,4 +12,6 @@ public class HomeController {
 
 		return "home";
 	}
+	
+	// Git Hub Test - Park Su Ho
 }
