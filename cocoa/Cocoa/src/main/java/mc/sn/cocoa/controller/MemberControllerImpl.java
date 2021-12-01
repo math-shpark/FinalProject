@@ -103,4 +103,5 @@ public class MemberControllerImpl implements MemberController {
 	
 	// 추가
 	// 수호 테스트
+	// 형재 테스트
 }
