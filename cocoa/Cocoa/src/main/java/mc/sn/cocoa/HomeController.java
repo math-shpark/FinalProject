@@ -13,5 +13,7 @@ public class HomeController {
 		return "home";
 	}
 	
-//테스트용 주석 merge
+
+// 테스트용 주석 merge 형재-태형-정준
+
 }
