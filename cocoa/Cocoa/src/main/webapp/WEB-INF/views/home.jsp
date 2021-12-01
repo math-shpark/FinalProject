@@ -10,7 +10,10 @@
 <script type="text/javascript" src="resources/js/jquery-3.6.0.min.js"></script>
 <title>CoCoa</title>
 <script>
+
    $(document).ready(function() {
+	   
+	   
 
       // 코칭 카테고리 클릭시 [코칭 글 작성] 표시
       $('#coaching').click(function() {
@@ -92,14 +95,14 @@
    <!-- 카탈로그바 -->
    <section class="py-5">
       <div class="container px-4 px-lg-5 mt-5">
-
+		
          <!-- 글 주제별 이동 -->
          <a id="pwrite_btn" class="btn btn-primary px-4 me-sm-3"
             href="/cocoa/view_projectWrite" style="float: right" hidden="">p글작성</a>
          <a id="cwrite_btn" class="btn btn-primary px-4 me-sm-3"
             href="/cocoa/view_coachWrite" style="float: right">c글작성</a> <br>
          <br> <br>
-
+		
          <!-- 생성된 카탈로그 표시 (select된 개수만큼 반복) + 페이징 필요 -->
          <div
             class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
