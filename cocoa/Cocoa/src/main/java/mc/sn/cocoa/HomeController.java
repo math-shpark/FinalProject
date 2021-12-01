@@ -13,5 +13,6 @@ public class HomeController {
 		return "home";
 	}
 	
-	// Git Hub Test - Park Su Ho
+// 테스트용 주석 merge 형재-태형-정준-수호
+
 }
