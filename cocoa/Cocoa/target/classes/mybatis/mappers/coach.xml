@@ -5,26 +5,29 @@
 
 <mapper namespace="mapper.coach">
 	<resultMap id="coachResult" type="coachVO">
+		<result property="coachNO" column="coachNO" />
 		<result property="coach" column="coach" />
-        <result property="lang" column="lang" />
-        <result property="cImg" column="cImg" />
-        <result property="cTitle" column="cTitle" />
-        <result property="basicPrice" column="basicPrice" />
-        <result property="cContents" column="cContents" />
-	</resultMap> 
-    
-    <!-- 새 코치 글 추가 기능 -->
-    <insert id="insertNewCoach"  parameterType="java.util.Map">
+		<result property="lang" column="lang" />
+		<result property="cImg" column="cImg" />
+		<result property="cTitle" column="cTitle" />
+		<result property="basicPrice" column="basicPrice" />
+		<result property="cContents" column="cContents" />
+	</resultMap>
+
+	<!-- 새 코칭 글 추가 기능 -->
+	<insert id="insertNewCoach" parameterType="java.util.Map">
 		<![CDATA[
 		 insert into coachingTBL (coachNO, coach, lang, cImg, cTitle, basicPrice, cContents)
 		 values(#{coachNO}, #{coach}, #{lang}, #{cImg}, #{cTitle}, #{basicPrice}, #{cContents})
-		]]>      
+		]]>
 	</insert>
-	
-	<select id="selectNewCoachNO" resultType="int"  >
+
+	<!-- 코칭 글 넘버링 -->
+	<select id="selectNewCoachNO" resultType="int">
 		<![CDATA[
-			SELECT  ifnull(max(coachNO), 0) + 1 from coachingTBL		
+			SELECT ifnull(max(coachNO), 0) + 1
+			from coachingTBL
 		]]>
 	</select>
-   
+
 </mapper>

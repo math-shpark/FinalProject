@@ -93,16 +93,20 @@
    <section class="py-5">
       <div class="container px-4 px-lg-5 mt-5">
 
-         <!-- 글 주제별 이동 -->
-         <a id="pwrite_btn" class="btn btn-primary px-4 me-sm-3"
-            href="/cocoa/view_projectWrite" style="float: right" hidden="">p글작성</a>
-         <a id="cwrite_btn" class="btn btn-primary px-4 me-sm-3"
-            href="/cocoa/view_coachWrite" style="float: right">c글작성</a> <br>
-         <br> <br>
+		<!-- 글 주제별 이동 -->
+		<!-- 로그인 여부에따라 숨김 / 표시 -->
+        <c:choose>
+	       <c:when test="${isLogOn == true && member != null}">
+		        <a id="pwrite_btn" class="btn btn-primary px-4 me-sm-3"
+		            href="/cocoa/view_projectWrite" style="float: right" hidden="">p글작성</a>
+		        <a id="cwrite_btn" class="btn btn-primary px-4 me-sm-3"
+		            href="/cocoa/view_coachWrite" style="float: right">c글작성</a>
+           </c:when>
+		</c:choose>
+		<br><br><br>
 
          <!-- 생성된 카탈로그 표시 (select된 개수만큼 반복) + 페이징 필요 -->
-         <div
-            class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
             <!-- 카탈로그 틀 -->
             <div class="col mb-5">

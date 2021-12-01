@@ -15,8 +15,9 @@ public class CoachServiceImpl implements CoachService {
 	@Autowired
 	private CoachDAO coachDAO;
 
+	// 새 코칭 글 삽입
 	@Override
-	public int addNewCoach(Map coachMap) throws Exception {
+	public int addNewCoach(Map coachMap) {
 		return coachDAO.insertNewCoach(coachMap);
 	}
 }

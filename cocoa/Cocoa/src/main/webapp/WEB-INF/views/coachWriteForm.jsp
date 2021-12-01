@@ -6,13 +6,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
 <link href="resources/css/styles.css" rel="stylesheet" />
 <script type="text/javascript" src="resources/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
+
 	function readURL(input) {
+		
 		if (input.files && input.files[0]) {
+			
 			var reader = new FileReader();
 			reader.onload = function(e) {
 				$('#preview').attr('src', e.target.result);
@@ -20,17 +22,14 @@
 			reader.readAsDataURL(input.files[0]);
 		}
 	}
-	function backToList(obj) {
-		obj.action = "${contextPath}/cocoa";
-		obj.submit();
-	}
-
+	
 	var cnt = 1;
 	function fn_addFile() {
 		$("#d_file")
 				.append("<br>" + "<input type='file' name='file"+cnt+"' />");
 		cnt++;
 	}
+	
 </script>
 <title>CoCoa</title>
 </head>
@@ -50,32 +49,18 @@
 				</ul>
 
 				<!-- 우측 상단 변경 -->
-				<c:choose>
-					<c:when test="${isLogOn == true && member != null}">
-						<form action="/cocoa/logout" method="get" class="d-flex">
-							<input name="My Page" class="btn btn-outline-dark" type="button"
-								value="My Page" onClick="location.href='/cocoa/myPage'" /> <input
-								name="logout" class="btn btn-outline-dark" type="submit"
-								value="logout" />
-						</form>
-					</c:when>
-					<c:otherwise>
-						<form action="/cocoa/view_login" method="get" class="d-flex">
-							<input name="login" class="btn btn-outline-dark" type="submit"
-								value="log in" /> <input name="join"
-								class="btn btn-outline-dark" type="button" value="Sign in"
-								onClick="location.href='/cocoa/view_join'" />
-						</form>
-					</c:otherwise>
-				</c:choose>
-
+				<form action="/cocoa/logout" method="get" class="d-flex">
+					<input name="My Page" class="btn btn-outline-dark" type="button"
+						value="My Page" onClick="location.href='/cocoa/myPage'" /> <input
+						name="logout" class="btn btn-outline-dark" type="submit"
+						value="logout" />
+				</form>
 			</div>
 		</div>
 	</nav>
 
 	<!-- 코칭 글 작성바 -->
-	<form name="coachWriteForm" method="post"
-		action="${contextPath}/coachWrite" enctype="multipart/form-data">
+	<form name="coachWriteForm" method="post" action="${contextPath}/coachWrite" enctype="multipart/form-data">
 		<section class="py-5">
 			<div class="container main-secction">
 				<div class="row">
@@ -104,10 +89,9 @@
 					<div class="card" style="width: 50rem;">
 						
 						<!-- cImg -->
-						<!-- 파일업로드 기능 필요 -->
 						<div align="center">
-							<img id="preview" src="resources/image/open-book.png" width=200
-								height=200 /><br> <label class="btn btn-outline-dark"
+							<br><img id="preview" src="..." width=90%
+								height=300 /><br><br> <label class="btn btn-outline-dark"
 								for="cImg"> 대표 이미지 변경 </label><input type="file" id="cImg"
 								name="cImg" onchange="readURL(this);" style="display: none;" />
 						</div>
@@ -144,8 +128,8 @@
 						<!-- 작성(submit) + 취소(버튼) -->
 						<div class="card-body" style="text-align: center">
 							<input type="submit" class="btn btn-outline-dark" value="등록" />
-							&nbsp; <input type="button" class="btn btn-outline-dark"
-								value="취소" onClick="backToList(this.form)" />
+							&nbsp;
+							<a href="/cocoa/" class="btn btn-outline-dark">취소</a>
 						</div>
 					</div>
 					

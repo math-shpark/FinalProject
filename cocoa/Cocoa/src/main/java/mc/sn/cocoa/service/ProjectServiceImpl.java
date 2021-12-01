@@ -14,11 +14,10 @@ import mc.sn.cocoa.dao.ProjectDAO;
 public class ProjectServiceImpl implements ProjectService {
 	@Autowired
 	private ProjectDAO projectDAO;
-	
+
+	// 새 프로젝트 글 삽입
 	@Override
-	public int addProject(Map projectMap) {
-		int result = 0;
-		result = projectDAO.insertProject(projectMap);
-		return result;
+	public int addNewProject(Map projectMap) {
+		return projectDAO.insertNewProject(projectMap);
 	}
 }

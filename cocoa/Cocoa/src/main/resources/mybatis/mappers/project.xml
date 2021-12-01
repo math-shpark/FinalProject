@@ -5,28 +5,31 @@
 
 <mapper namespace="mapper.project">
 	<resultMap id="projectResult" type="projectVO">
+		<result property="projectNO" column="projectNO" />
 		<result property="leader" column="leader" />
-        <result property="pImg" column="pImg" />
-        <result property="pTitle" column="pTitle" />
-        <result property="memberCount" column="memberCount" />
-        <result property="level" column="level" />
-        <result property="pContents" column="pContents" />
-        <result property="map" column="map" />
-        <result property="kakao" column="kakao" />
-	</resultMap> 
-    
-    <!-- 프로젝트 입력 쿼리 -->
-    <insert id="insertProject"  parameterType="java.util.Map">
+		<result property="pImg" column="pImg" />
+		<result property="pTitle" column="pTitle" />
+		<result property="memberCount" column="memberCount" />
+		<result property="level" column="level" />
+		<result property="pContents" column="pContents" />
+		<result property="map" column="map" />
+		<result property="kakao" column="kakao" />
+	</resultMap>
+
+	<!-- 프로젝트 입력 쿼리 -->
+	<insert id="insertNewProject" parameterType="java.util.Map">
 		<![CDATA[
 		 insert into projectTBL
 		 values(#{projectNO}, #{leader}, #{pImg}, #{pTitle}, #{memberCount}, #{level}, #{pContents}, "default", #{kakao})
-		]]>      
+		]]>
 	</insert>
-	
-	<select id="selectNewProjectNO" resultType="int"  >
+
+	<!-- 프로젝트 글 넘버링 -->
+	<select id="selectNewProjectNO" resultType="int">
 		<![CDATA[
-			SELECT ifnull(max(projectNO), 0) + 1 from projectTBL		
+			SELECT ifnull(max(projectNO), 0) + 1
+			from projectTBL
 		]]>
 	</select>
-   
+
 </mapper>
