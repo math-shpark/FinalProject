@@ -12,9 +12,4 @@ public class HomeController {
 
 		return "home";
 	}
-	
-// 테스트용 주석 merge 형재-태형-정준-수호
-	
-	/// 안녕하세요 반갑습니다
-
 }

@@ -100,7 +100,4 @@ public class MemberControllerImpl implements MemberController {
 		System.out.println(result);
 		return result;
 	}
-	
-	// 추가
-	// 수호 테스트
 }

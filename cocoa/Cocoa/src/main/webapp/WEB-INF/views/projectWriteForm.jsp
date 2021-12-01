@@ -37,7 +37,6 @@
 <title>CoCoa</title>
 </head>
 <body style="background-color: #FFEBCD">
-<!-- 정준 test -->
 	<!-- 상단바 -->
 	<nav class="navbar navbar-expand-lg" style="background-color: #663333;">
 
