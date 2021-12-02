@@ -8,22 +8,20 @@ public class MemberVO {
 	private String pwd;
 	private String name;
 	private String phone;
-	private String pImg;
-	private String pContents;
-	private int doLike;
+	private String proImg;
+	private String proContents;
 	
 	public MemberVO() {
 		
 	}
 	
-	public MemberVO(String id, String pwd, String name, String phone, String pImg, String pContents, int doLike) {
+	public MemberVO(String id, String pwd, String name, String phone, String proImg, String proContents) {
 		this.id = id;
 		this.pwd = pwd;
 		this.name = name;
 		this.phone = phone;
-		this.pImg = pImg;
-		this.pContents = pContents;
-		this.doLike = doLike;
+		this.proImg = proImg;
+		this.proContents = proContents;
 	}
 
 	public String getId() {
@@ -58,29 +56,23 @@ public class MemberVO {
 		this.phone = phone;
 	}
 
-	public String getpImg() {
-		return pImg;
+	public String getproImg() {
+		return proImg;
 	}
 
-	public void setpImg(String pImg) {
-		this.pImg = pImg;
+	public void setproImg(String proImg) {
+		this.proImg = proImg;
 	}
 
-	public String getpContents() {
-		return pContents;
+	public String getproContents() {
+		return proContents;
 	}
 
-	public void setpContents(String pContents) {
-		this.pContents = pContents;
+	public void setproContents(String proContents) {
+		this.proContents = proContents;
 	}
 
-	public int getDoLike() {
-		return doLike;
-	}
-
-	public void setDoLike(int doLike) {
-		this.doLike = doLike;
-	}
+	
 	
 	
 	

@@ -29,5 +29,34 @@
 			from coachingTBL
 		]]>
 	</select>
+	
+	<!-- 코치 글 전체 조회 -->
+	<select id="selectAllCoachesList" resultMap="coachResult">
+		<![CDATA[
+			SELECT *
+			from coachingTBL
+		]]>
+	</select>
+	
+	<!-- 전달된 코치 글 번호에 대한 글 정보 조회 -->
+	<select id="selectCoach" resultType="coachVO" parameterType="int">
+		<![CDATA[
+			SELECT *
+			from coachingTBL
+			where coachNO = #{coachNO}
+		]]>
+	</select>
+	
+	 <update id="updateCoach"  parameterType="java.util.Map">
+			update coachingTBL
+			set cTitle=#{cTitle},	 
+			cContents=#{cContents},
+			basicPrice=#{basicPrice},
+			lang=#{lang}
+			 <if test="cImg!='' and cImg!=null">
+			  , cImg=#{cImg}
+			</if>
+			where coachNO=#{coachNO}
+	</update>
 
 </mapper>
